@@ -11,4 +11,6 @@ void LinkedList_add(LinkedList *list, void *value);
 
 void *LinkedList_get(LinkedList *list, int index);
 
-void *LinkedList_foreach(LinkedList *list, void (*fn)(LinkedList *list, void *val));
+void LinkedList_remove(LinkedList *list, int index);
+
+void LinkedList_foreach(LinkedList *list, void (*fn)(LinkedList *list, void *val));

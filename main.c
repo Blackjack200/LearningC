@@ -4,7 +4,7 @@
 typedef const char string[];
 
 
-void fn(LinkedList *list, void *val) {
+void fn(LinkedList *_, void *val) {
     string *e = val;
     printf("%s\n", *e);
 }
@@ -15,6 +15,7 @@ int main(void) {
     LinkedList *list = LinkedList_new();
     LinkedList_add(list, test);
     LinkedList_add(list, test2);
+    LinkedList_remove(list, 1);
     LinkedList_foreach(list, fn);
     return 0;
 }

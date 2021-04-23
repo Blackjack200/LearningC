@@ -37,7 +37,18 @@ void *LinkedList_get(LinkedList *list, int index) {
     return node->value;
 }
 
-void *LinkedList_foreach(LinkedList *list, void (*fn)(LinkedList *list, void *val)) {
+void LinkedList_remove(LinkedList *list, int index) {
+    int i = 0;
+    index -= 1;
+    list_node *node = list->next;
+    while (i++ < index) {
+        node = node->next;
+    }
+    node->next = NULL;
+    list->len--;
+}
+
+void LinkedList_foreach(LinkedList *list, void (*fn)(LinkedList *list, void *val)) {
     int i = 0;
     list_node *node = list->next;
     while (i++ < list->len) {
